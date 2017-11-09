@@ -1,8 +1,13 @@
 VIM_DIR := $(HOME)/.vim
 VIM_PACK_DIR := $(VIM_DIR)/pack/clojure/start
 VIM_PLUGIN_DIR := $(VIM_DIR)/plugin
+CTAGS_CONFIG := $(HOME)/.ctags
 
 install: prepare_vim
+
+# link current dot file to the home dir
+$(HOME)/%: %
+	@ln -fs $(PWD)/$< $@
 
 # check specific command
 check_cmd_%:
@@ -12,9 +17,9 @@ check_cmd_%:
 	fi
 
 # for vim
-prepare_vim: check_vim_deps deploy_vim_configs manage_vim_plugins
+prepare_vim: check_vim_deps deploy_vim_configs manage_vim_plugins $(CTAGS_CONFIG)
 
-check_vim_deps: check_cmd_git
+check_vim_deps: check_cmd_git check_cmd_ctags
 
 deploy_vim_configs: $(VIM_PLUGIN_DIR)
 
