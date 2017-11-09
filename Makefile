@@ -18,7 +18,7 @@ check_vim_deps: check_cmd_git
 
 deploy_vim_configs: $(VIM_PLUGIN_DIR)
 
-$(VIM_PLUGIN_DIR): plugin/configs/*.vim 
+$(VIM_PLUGIN_DIR): plugin/configs/*.vim plugin/*.vim
 	@mkdir -p $@
 	@cp -r plugin/* $@
 
