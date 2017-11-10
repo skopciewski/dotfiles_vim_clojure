@@ -19,7 +19,7 @@ check_cmd_%:
 # for vim
 prepare_vim: check_vim_deps deploy_vim_configs manage_vim_plugins $(CTAGS_CONFIG)
 
-check_vim_deps: check_cmd_git check_cmd_ctags
+check_vim_deps: check_cmd_git check_cmd_ctags check_cmd_joker
 
 deploy_vim_configs: $(VIM_PLUGIN_DIR)
 
