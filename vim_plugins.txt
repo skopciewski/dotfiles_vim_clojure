@@ -5,4 +5,5 @@ https://github.com/tpope/vim-dispatch.git
 https://github.com/vim-scripts/paredit.vim.git
 https://github.com/janko-m/vim-test.git
 https://github.com/vim-syntastic/syntastic.git
+https://github.com/aclaimant/syntastic-joker.git
 https://github.com/ludovicchabant/vim-gutentags.git
